@@ -1,15 +1,13 @@
 // require express a node framework
 var express = require('express');
+var moviesController = require('./../controllers/moviesController');
 
 /*
 	List of movies route starts
 */
 var movieRouter = express.Router();
-movieRouter.route('')
-	.get(function(req, res) {
-	// the response to be sent when this request is made
-	res.send('List of movies!');
-});
+
+movieRouter.route('').get(moviesController);
 /*
 	./ List of movies route ends
 */
