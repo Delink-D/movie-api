@@ -1,11 +1,14 @@
 // require express a node framework
 var express = require('express');
 var mongoose = require('mongoose');
+var bodyParser = require('body-parser')
 var movieRouter = require('./router/moviesRouter');
 var app = express();
 
 // a database connection to the mongodb
 var db = mongoose.connect("mongodb://localhost/movies");
+
+app.use(bodyParser.json());
 
 // when this url with /movies is called use movieRouter function
 app.use('/movies', movieRouter);
