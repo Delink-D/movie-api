@@ -1,0 +1,19 @@
+{
+  "name": "movie-api",
+  "version": "1.0.0",
+  "description": "This is a beggining of API's, Movie API app",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "API",
+    "Nodejs",
+    "Movies"
+  ],
+  "author": "Delink-D",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.15.3"
+  }
+}
