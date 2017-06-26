@@ -14,7 +14,8 @@ movieRouter.route('')
 // a route to get a movies by id
 movieRouter.route('/:id')
 	.get(moviesController.getById)	// route to get a movie by id
-	.put(moviesController.update); 	// route to update a movie
+	.put(moviesController.update) 	// route to update a movie using put
+	.patch(moviesController.patch) 	// route to update a movie using patch
 
 // export movieRouter
 module.exports = movieRouter;

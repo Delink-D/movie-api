@@ -67,11 +67,37 @@ var update = function(req, res) {
 	});
 };
 
+// function to update a movie using patch
+var patch = function(req, res) {
+	Movie.findById(req.params.id, function(err, movie) {
+		if (!err) {
+			if (req.body._id) {
+				delete req.body._id;
+			}
+
+			for(var p in req.body){
+				movie[p] = req.body[p];
+			}
+
+			movie.save(function(err) {
+				if(!err){
+					res.status(200);
+					res.send(movie);
+				}else{
+					res.status(500);
+					res.send("Failed!");
+				}
+			});
+		}
+	});
+}
+
 // module.exports = get;
 // module.exports = add;
 module.exports = {
 	get: get,
 	add: add,
 	getById: getById,
-	update: update
+	update: update,
+	patch: patch
 };
