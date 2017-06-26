@@ -92,6 +92,18 @@ var patch = function(req, res) {
 	});
 }
 
+// function to delete a movie object
+var del =  function(req, res) {
+	Movie.findById(req.body._id, function(err, movie) {
+		movie.remove(function(err) {
+			if (!err) {
+				res.status(204);
+				res.send("Movie was removed");
+			}
+		});
+	});
+};
+
 // module.exports = get;
 // module.exports = add;
 module.exports = {
@@ -99,5 +111,6 @@ module.exports = {
 	add: add,
 	getById: getById,
 	update: update,
-	patch: patch
+	patch: patch,
+	del: del
 };

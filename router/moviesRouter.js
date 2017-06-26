@@ -9,7 +9,8 @@ var movieRouter = express.Router();
 
 movieRouter.route('')
 	.get(moviesController.get)		// route to get all movies
-	.post(moviesController.add); 	// route to add new movie to db
+	.post(moviesController.add) 	// route to add new movie to db
+	.delete(moviesController.del); 	// route to delete a record
 
 // a route to get a movies by id
 movieRouter.route('/:id')
