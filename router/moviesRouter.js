@@ -1,6 +1,10 @@
 // require express a node framework
 var express = require('express');
-var moviesController = require('./../controllers/moviesController');
+
+// require the model
+var Movie = require('./../models/moviesModels');
+
+var moviesController = require('./../controllers/moviesController')(Movie);
 
 /*
 	List of movies route starts
